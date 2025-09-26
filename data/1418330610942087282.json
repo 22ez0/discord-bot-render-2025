@@ -1,0 +1,112 @@
+{
+  "guildId": "1418330610942087282",
+  "automod": {
+    "enabled": true,
+    "antiSpam": {
+      "enabled": false,
+      "maxMessages": 5,
+      "timeWindow": 10,
+      "punishment": "timeout",
+      "punishmentDuration": 10
+    },
+    "antiLinks": {
+      "enabled": true,
+      "allowWhitelist": false,
+      "whitelist": [],
+      "punishment": "timeout",
+      "customRules": {
+        "enabled": true,
+        "allowedDomains": [
+          "gif",
+          "giphy.com",
+          "tenor.com",
+          "tiktok.com",
+          "vm.tiktok.com",
+          "instagram.com",
+          "ig.com",
+          "spotify.com",
+          "open.spotify.com"
+        ],
+        "blockDiscordInvites": true,
+        "exemptUserId": "1415549624747560970",
+        "timeoutDuration": 10
+      }
+    },
+    "bannedWords": {
+      "enabled": true,
+      "words": [
+        "cp",
+        "child porn",
+        "cepe",
+        "sepe",
+        "estupro",
+        "estuprar",
+        "gordo",
+        "gorda",
+        "rape",
+        "cortes",
+        "lulz",
+        "automutilação"
+      ],
+      "punishment": "warn",
+      "ignoreRoles": [],
+      "customRules": {
+        "enabled": true,
+        "agePatterns": true,
+        "strictMode": true,
+        "exemptUserId": "1415549624747560970"
+      }
+    },
+    "antiSpamAdvanced": {
+      "enabled": true,
+      "spamMessages": 8,
+      "spamTimeWindow": 4,
+      "spamPunishment": "timeout",
+      "spamTimeoutDuration": 30,
+      "identicalMessages": 3,
+      "identicalTimeWindow": 4,
+      "identicalPunishment": "timeout",
+      "identicalTimeoutDuration": 60,
+      "warningSystem": {
+        "enabled": true,
+        "maxWarnings": 3,
+        "escalationActions": [
+          "kick",
+          "ban"
+        ]
+      },
+      "exemptUserId": "1415549624747560970"
+    }
+  },
+  "automation": {
+    "welcome": {
+      "enabled": false,
+      "message": "Bem-vindo(a) ao servidor, {user}! 👋"
+    },
+    "goodbye": {
+      "enabled": false,
+      "message": "{user} saiu do servidor. 😢"
+    },
+    "autoRoles": {
+      "enabled": false,
+      "roles": []
+    },
+    "voiceChannels": {
+      "enabled": true,
+      "joinChannelId": "1418330613055750278"
+    }
+  },
+  "logs": {
+    "events": {
+      "moderation": true,
+      "members": true,
+      "messages": false,
+      "voice": false
+    }
+  },
+  "parceiros": {
+    "roleId": "1420445395934249023",
+    "serversChannelId": "1418398778955923646",
+    "enabled": true
+  }
+}
