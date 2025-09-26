@@ -103,7 +103,7 @@ export interface ServerConfig {
 }
 
 class StorageManager {
-    private dataDir = process.env.NODE_ENV === 'production' ? '/app/data' : './data';
+    private dataDir = process.env.NODE_ENV === 'production' ? './data' : './data';
     private cache = new Map<string, ServerConfig>();
 
     constructor() {
