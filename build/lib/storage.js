@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
 class StorageManager {
     constructor() {
-        this.dataDir = process.env.NODE_ENV === 'production' ? '/app/data' : './data';
+        this.dataDir = process.env.NODE_ENV === 'production' ? './data' : './data';
         this.cache = new Map();
         this.ensureDataDir();
     }
