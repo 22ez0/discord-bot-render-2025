@@ -1,0 +1,51 @@
+> Cloning from https://github.com/22ez0/eixobot
+==> Checking out commit bbafe1119226bdf104315cd2ca1d10195921d1f2 in branch main
+==> Requesting Node.js version ^20.0.0
+==> Using Node.js version 20.19.5 via /opt/render/project/src/package.json
+==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+==> Running build command 'npm ci --include=dev && npm run build'...
+npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm error
+npm error Missing: @snazzah/davey@0.1.6 from lock file
+npm error Missing: @snazzah/davey-android-arm-eabi@0.1.6 from lock file
+npm error Missing: @snazzah/davey-android-arm64@0.1.6 from lock file
+npm error Missing: @snazzah/davey-darwin-arm64@0.1.6 from lock file
+npm error Missing: @snazzah/davey-darwin-x64@0.1.6 from lock file
+npm error Missing: @snazzah/davey-freebsd-x64@0.1.6 from lock file
+npm error Missing: @snazzah/davey-linux-arm-gnueabihf@0.1.6 from lock file
+npm error Missing: @snazzah/davey-linux-arm64-gnu@0.1.6 from lock file
+npm error Missing: @snazzah/davey-linux-arm64-musl@0.1.6 from lock file
+npm error Missing: @snazzah/davey-linux-x64-gnu@0.1.6 from lock file
+npm error Missing: @snazzah/davey-linux-x64-musl@0.1.6 from lock file
+npm error Missing: @snazzah/davey-wasm32-wasi@0.1.6 from lock file
+npm error Missing: @snazzah/davey-win32-arm64-msvc@0.1.6 from lock file
+npm error Missing: @snazzah/davey-win32-ia32-msvc@0.1.6 from lock file
+npm error Missing: @snazzah/davey-win32-x64-msvc@0.1.6 from lock file
+npm error Missing: @napi-rs/wasm-runtime@0.2.12 from lock file
+npm error Missing: @emnapi/core@1.5.0 from lock file
+npm error Missing: @emnapi/runtime@1.5.0 from lock file
+npm error Missing: @tybys/wasm-util@0.10.1 from lock file
+npm error Missing: @emnapi/wasi-threads@1.1.0 from lock file
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /opt/render/.cache/_logs/2025-09-20T16_22_43_579Z-debug-0.log
+==> Build failed 😞
+==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
