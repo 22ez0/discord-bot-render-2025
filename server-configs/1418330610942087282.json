@@ -1,0 +1,66 @@
+{
+  "clSystem": {
+    "enabled": true,
+    "allowedRoles": [
+      "1418330780865794280",
+      "1418380772557197402"
+    ],
+    "allowedUsers": [],
+    "customTriggers": [
+      "teste"
+    ],
+    "deleteOwnMessage": true
+  },
+  "logging": {
+    "enabled": false,
+    "channelId": "",
+    "events": {
+      "ban": true,
+      "kick": true,
+      "mute": true,
+      "roleAdd": true,
+      "roleRemove": true,
+      "roleCreate": true,
+      "roleDelete": true,
+      "voiceJoin": true,
+      "voiceLeave": true,
+      "messageDelete": true,
+      "messageEdit": true,
+      "channelCreate": true,
+      "channelDelete": true
+    }
+  },
+  "automod": {
+    "antiLink": {
+      "enabled": true,
+      "allowedDomains": [],
+      "action": "delete"
+    },
+    "wordFilter": {
+      "enabled": true,
+      "bannedWords": [],
+      "action": "delete"
+    },
+    "antiSpam": {
+      "enabled": true,
+      "maxMessages": 5,
+      "timeWindow": 5000,
+      "action": "delete"
+    },
+    "antiCaps": {
+      "enabled": true,
+      "maxPercentage": 70,
+      "action": "delete"
+    }
+  },
+  "autoRole": {
+    "enabled": false,
+    "roleId": "",
+    "message": "Bem-vindo! Reaja para receber seu cargo."
+  },
+  "welcome": {
+    "enabled": true,
+    "channelId": "",
+    "message": "Bem-vindo ao servidor, {user}!"
+  }
+}
