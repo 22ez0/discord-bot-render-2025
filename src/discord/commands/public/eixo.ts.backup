@@ -1,0 +1,79 @@
+import { createCommand } from "#base";
+import { ApplicationCommandType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
+import { getServerEmojis } from "./emoji-manager.js";
+
+function buildMainEmbed(botAvatarURL?: string, guildId?: string): EmbedBuilder {
+    const emojis = guildId ? getServerEmojis(guildId) : {};
+    
+    return new EmbedBuilder()
+        .setColor("#00070b")
+        .setTitle(`${emojis.mod_black || "<:mod_black:1418647219246075964>"} **PAINEL EIXO** | Dashboard Principal`)
+        .setDescription(
+            `> Bem-vindo ao painel principal do **Eixo**!\n` +
+            `> Selecione uma categoria abaixo para ver os comandos disponíveis.\n\n` +
+            `${emojis.antinuke || "<:antinuke:1418647215542370415>"} **Moderação** - Comandos de moderação e controle\n` +
+            `${emojis.clyde || "<:clyde:1418752850711805975>"} **Automação** - Sistemas automáticos do servidor\n` +
+            `${emojis.mod_black || "<:mod_black:1418647219246075964>"} **Configuração** - Ajustes e configurações\n` +
+            `${emojis.A_Tada || "<a:A_Tada:1418647260002254981>"} **Diversão** - Comandos de entretenimento\n` +
+            `${emojis.serverowner || "<:serverowner:1418752887768481792>"} **Utilidades** - Ferramentas úteis para o servidor`
+        )
+        .setThumbnail(botAvatarURL || null)
+        .setFooter({ 
+            text: "Eixo Bot • Desenvolvido por vegas!", 
+            iconURL: botAvatarURL || undefined 
+        })
+        .setTimestamp();
+}
+
+function buildMainButtons(guildId?: string): ActionRowBuilder<ButtonBuilder> {
+    const emojis = guildId ? getServerEmojis(guildId) : {};
+    
+    return new ActionRowBuilder<ButtonBuilder>()
+        .addComponents(
+            new ButtonBuilder()
+                .setCustomId("eixo_moderation")
+                .setLabel("Moderação")
+                .setEmoji(emojis.antinuke || "<:antinuke:1418647215542370415>")
+                .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
+                .setCustomId("eixo_automation")
+                .setLabel("Automação")
+                .setEmoji(emojis.clyde || "<:clyde:1418752850711805975>")
+                .setStyle(ButtonStyle.Success),
+            new ButtonBuilder()
+                .setCustomId("eixo_config")
+                .setLabel("Configuração")
+                .setEmoji(emojis.mod_black || "<:mod_black:1418647219246075964>")
+                .setStyle(ButtonStyle.Secondary),
+            new ButtonBuilder()
+                .setCustomId("eixo_fun")
+                .setLabel("Diversão")
+                .setEmoji(emojis.A_Tada || "<a:A_Tada:1418647260002254981>")
+                .setStyle(ButtonStyle.Danger),
+            new ButtonBuilder()
+                .setCustomId("eixo_utils")
+                .setLabel("Utilidades")
+                .setEmoji(emojis.serverowner || "<:serverowner:1418752887768481792>")
+                .setStyle(ButtonStyle.Secondary)
+        );
+}
+
+createCommand({
+    name: "eixo",
+    description: "Painel principal do bot Eixo - Comandos e funções de automação",
+    type: ApplicationCommandType.ChatInput,
+    async run(interaction) {
+        // Defer imediatamente para evitar timeout
+        await interaction.deferReply({ ephemeral: true });
+        
+        const botAvatarURL = interaction.client.user?.displayAvatarURL();
+        const guildId = interaction.guild?.id;
+        const mainEmbed = buildMainEmbed(botAvatarURL, guildId);
+        const buttons = buildMainButtons(guildId);
+
+        await interaction.editReply({
+            embeds: [mainEmbed],
+            components: [buttons]
+        });
+    }
+});
